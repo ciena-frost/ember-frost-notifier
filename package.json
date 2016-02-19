@@ -12,14 +12,14 @@
     "build": "ember build",
     "test": "npm run-script lint && ember test"
   },
-  "repository": "ssh://git@bitbucket.ciena.com/bp_frost/frost-notifier.git",
+  "repository": "https://github.com/ciena-frost/ember-frost-notifier.git",
   "engines": {
     "node": ">= 5.0.0"
   },
-  "author": "Sophy Pal (https://github.com/sophypal",
+  "author": "Sophy Pal (https://github.com/sophypal)",
   "contributors": [
-    "Roxanne Panthaky (https://github.com/rox163",
-    "Steven Glanzer (https://github.com/sglanzer"
+    "Roxanne Panthaky (https://github.com/rox163)",
+    "Steven Glanzer (https://github.com/sglanzer)"
   ],
   "license": "MIT",
   "devDependencies": {
@@ -67,8 +67,5 @@
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"
-  },
-  "publishConfig": {
-    "registry": "https://artifactory.ciena.com/api/npm/blueplanet-npm"
   }
 }
