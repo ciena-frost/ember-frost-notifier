@@ -7,9 +7,10 @@
 [npm-img]: https://img.shields.io/npm/v/ember-frost-notifier.svg "NPM Version"
 [npm-url]: https://www.npmjs.com/package/ember-frost-notifier
 
+# ember-frost-notifier
+
 [![Travis][ci-img]][ci-url] [![Coveralls][cov-img]][cov-url] [![NPM][npm-img]][npm-url]
 
-# ember-frost-notifier
 A service and component for managing application notifications
 
  * [Installation](#Installation)
