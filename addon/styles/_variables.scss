@@ -1,0 +1,49 @@
+//
+// Notification variables
+// --------------------------------------------------
+
+
+// Notification base
+// -------------------------
+
+$notification-zindex: 6000;
+$notification-border-radius: 2px !default;
+$notification-padding: 10px !default;
+$notification-spacing: 5px !default;
+
+$notification-width: 450px !default;
+$notification-max-height: 800px !default;
+
+$notification-icon-width: 30px !default;
+$notification-icon-height: 36px !default;
+$notification-icon-spacing: 5px !default;
+$notification-icon-position: 10px !default;
+$notification-icon-color: rgba($frost-color-white,.74) !default;
+
+
+// Notification themes
+// -------------------------
+
+// Success notification
+$notification-success-bg: #00AA3E;
+$notification-success-header-text: $frost-color-grey-1;
+$notification-success-details: #C6FF8A;
+$notification-success-details-text: #006823;
+
+// Neutral notification
+$notification-info-bg: $frost-color-teal-1;
+$notification-info-header-text: $frost-color-grey-1;
+$notification-info-details: $frost-color-teal-3;
+$notification-info-details-text: $frost-color-teal-2;
+
+// Warning notification
+$notification-warning-bg: #DDD326;
+$notification-warning-header-text: $frost-color-grey-1;
+$notification-warning-details: #FFF6B3;
+$notification-warning-details-text: #A89B00;
+
+// Error notification
+$notification-error-bg: #E52C2C;
+$notification-error-header-text: $frost-color-grey-1;
+$notification-error-details: #FFBDBD;
+$notification-error-details-text: #A31414;

@@ -1,0 +1,33 @@
+<div class="demo-application">
+  <div class="demo-content">
+    {{frost-notifier}}
+    <form>
+        <fieldset>
+          <legend>Frost Notifications</legend>
+          <div class='field'>
+            <label>Message:</label>
+            <div class='field-value'>
+            {{frost-text id="message-field" type="text" value=message on-input=(action 'text')}}
+            </div>
+          </div>
+          <div class='field'>
+            <label>Type:</label>
+            <div class='field-value'>
+              {{frost-select data=selectData on-change=(action 'select')}}
+            </div>
+          </div>
+          <div class='field'>
+            <label>Timeout:</label>
+            <div class='field-value'>
+              {{frost-text value=clearDuration}}
+            </div>
+          </div>
+          <div class='field'>
+            <label></label>
+            {{#frost-button priority="secondary" on-click=(action 'clearAll')}}Clear all{{/frost-button}}
+            {{#frost-button id="show-notification" priority="primary" on-click=(action 'showNotification')}}Show{{/frost-button}}
+          </div>
+        </fieldset>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+{
+  "env": {
+    "browser": true,
+  },
+  "globals": {
+    "sinon": true,
+    "describe": true,
+    "beforeEach": true,
+    "it": true,
+    "afterEach": true,
+    "expect": true,
+    "xit": true,
+  }
+}
