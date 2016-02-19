@@ -1,25 +1,26 @@
 {
-  "name": "frost-notifier",
-  "version": "1.0.1",
-  "description": "A notification widget",
+  "name": "ember-frost-notifier",
+  "version": "0.0.1",
+  "description": "An ember service and component for managing application notifications",
   "directories": {
     "doc": "doc",
     "test": "tests"
   },
   "scripts": {
-    "check-version-bump": "fr-bump check BP_FROST frost-notifier",
-    "prefr-publish": "fr-bump BP_FROST frost-notifier",
-    "fr-publish": "npm publish .",
-    "build": "ember build",
-    "lint": "eslint .",
+    "lint": "eslint *.js addon app config tests",
     "start": "ember server",
-    "test": "npm run lint && ember test"
+    "build": "ember build",
+    "test": "npm run-script lint && ember test"
   },
   "repository": "ssh://git@bitbucket.ciena.com/bp_frost/frost-notifier.git",
   "engines": {
-    "node": ">= 0.10.0"
+    "node": ">= 5.0.0"
   },
-  "author": "",
+  "author": "Sophy Pal (https://github.com/sophypal",
+  "contributors": [
+    "Roxanne Panthaky (https://github.com/rox163",
+    "Steven Glanzer (https://github.com/sglanzer"
+  ],
   "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.2",

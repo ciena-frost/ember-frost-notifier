@@ -1,8 +1,8 @@
 /* globals blanket, module */
 
 var options = {
-  modulePrefix: 'frost-notifications',
-  filter: '//.*frost-notifications/.*/',
+  modulePrefix: 'ember-frost-notifier',
+  filter: '//.*ember-frost-notifier/.*/',
   antifilter: '//.*(tests|template).*/',
   loaderExclusions: [],
   enableCoverage: true,

@@ -41,7 +41,7 @@ module.exports = function (environment) {
   }
 
   if (environment === 'production') {
-    ENV.baseURL = '/pages/NMS_FROST/frost-notifications/gh-pages/browse'
+    ENV.baseURL = '/ember-frost-notifier'
   }
 
   return ENV
