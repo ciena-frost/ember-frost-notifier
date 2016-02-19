@@ -1,0 +1,69 @@
+//
+// Notification keyframes
+// --------------------------------------------------
+
+
+// Show keyframes
+// -------------------------
+
+@keyframes frost-notifications-show {
+	0% {
+		opacity: 0;
+		@include transform(perspective(450px) translate(0, -30px) rotateX(90deg));
+	}
+
+	100% {
+		opacity: 1;
+		@include transform(perspective(450px) translate(0, 0) rotateX(0deg));
+	}
+}
+
+
+// Shrink keyframes
+// -------------------------
+
+@keyframes frost-notifications-shrink {
+	0% {
+		opacity: 0;
+		max-height: $notification-max-height;
+		margin-bottom: $notification-spacing;
+		@include transform(scale(.8));
+	}
+
+	100% {
+		opacity: 0;
+		max-height: 0;
+		margin-bottom: 0;
+		@include transform(scale(.8));
+	}
+}
+
+
+// Hide keyframes
+// -------------------------
+
+@keyframes frost-notifications-hide {
+	0% {
+		opacity: 1;
+		@include transform(scale(1));
+	}
+
+	100% {
+		opacity: 0;
+		@include transform(scale(.8));
+	}
+}
+
+
+// Countdown keyframes
+// -------------------------
+
+@keyframes frost-notifications-countdown {
+	0% {
+		width: 100%;
+	}
+
+	100% {
+		width: 0%;
+	}
+}

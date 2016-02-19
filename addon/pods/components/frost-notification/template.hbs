@@ -1,0 +1,21 @@
+<div class="notification-wrapper">
+	<div class="content">
+		{{#unless (eq notification.type "success")}}
+			{{frost-icon icon=notificationIcon class="icon"}}
+		{{/unless}}
+		<div class="message">
+			{{notification.message}}
+		</div>
+
+		{{#if notification.details}}
+			<div class="details">
+				<a {{action 'onDetailsClicked'}}>Open Details</a>
+			</div>
+		{{/if}}
+	</div>
+
+	<span class="close" {{action "removeNotification"}}
+	      title="Dismiss this notification">
+		{{frost-icon icon='frost/close'}}
+	</span>
+</div>

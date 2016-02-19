@@ -1,0 +1,111 @@
+@import "variables";
+@import "mixins";
+@import "keyframes";
+
+//
+// Notification component
+// --------------------------------------------------
+
+
+// Container that houses the notification messages
+.frost-notifications-container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	margin-left: auto;
+	margin-right: auto;
+	width: $notification-width;
+	z-index: $notification-zindex;
+}
+
+
+// Base notification
+// -------------------------
+
+.frost-notifications {
+	font-size: $frost-font-s;
+	position: relative;
+	margin-bottom: $notification-spacing;
+	overflow: hidden;
+	border-radius: $notification-border-radius;
+	max-height: $notification-max-height;
+	color: $frost-color-white;
+	box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.25);
+	@include animation(frost-notifications-hide 250ms cubic-bezier(.33859, -.42, 1, -.22), frost-notifications-shrink 250ms 250ms cubic-bezier(.5, 0, 0, 1));
+	@include animation-fill-mode(forwards);
+}
+
+
+// Notification in
+// -------------------------
+
+.frost-notifications-in {
+	@include animation(frost-notifications-show 180ms cubic-bezier(.175, .885, .32, 1.27499));
+}
+
+
+// Notification content
+// -------------------------
+
+.frost-notifications .icon {
+	height: $notification-icon-height;
+	width: $notification-icon-width;
+}
+
+.frost-notifications .message {
+	padding: $notification-padding;
+}
+
+.frost-notifications .message .dismissable {
+	padding-right: $notification-icon-width;
+}
+
+.notification-wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	.content {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex: 1;
+	}
+}
+
+.frost-notifications .details {
+	padding-right: $notification-padding;
+
+	a {
+		text-decoration: underline;
+		cursor: pointer;
+	}
+}
+
+.frost-notifications .close {
+
+	svg {
+		height: 24px;
+		width: 24px;
+	}
+
+	cursor: pointer;
+	padding-right: $notification-padding;
+}
+
+// Notification themes
+// -------------------------
+
+.frost-notifications-success {
+	@include frost-notifications-theme($notification-success-bg, $notification-success-header-text, #43C9F7);
+}
+.frost-notifications-info {
+	@include frost-notifications-theme($notification-info-bg, $notification-info-header-text, #43C9F7);
+}
+.frost-notifications-error {
+	@include frost-notifications-theme($notification-error-bg, $notification-error-header-text, #43C9F7);
+}
+.frost-notifications-warning {
+	@include frost-notifications-theme($notification-warning-bg, $notification-warning-header-text, #43C9F7);
+}
