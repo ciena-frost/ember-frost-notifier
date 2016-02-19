@@ -1,5 +1,5 @@
 {
-  "name": "frost-notifications",
+  "name": "ember-frost-notifier",
   "dependencies": {
     "blanket": "^1.1.7",
     "bourbon": "^4.2.6",
@@ -13,7 +13,7 @@
     "lodash": "^3.10.1",
     "perfect-scrollbar": "^0.6.7",
     "pretender": "^0.10.1",
-    "chai-jquery": "~2.0.1"
+    "sinonjs": "^1.17.1"
   },
   "resolutions": {
     "ember": "^2.3.1"
