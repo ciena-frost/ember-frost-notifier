@@ -5,20 +5,20 @@
 
 @mixin frost-notifications-theme($borderColor, $messageColor, $detailsColor) {
 
-	.notification-wrapper {
-		border: 1px solid $borderColor;
-		background-color: rgba(white, 0.95);
-	}
+  .notification-wrapper {
+    border: 1px solid $borderColor;
+    background-color: rgba(white, 0.95);
+  }
 
-	.message {
-		color: $messageColor;
-	}
+  .message {
+    color: $messageColor;
+  }
 
-	.close {
-		color: $messageColor;
-	}
+  .close {
+    color: $messageColor;
+  }
 
-	.details a {
-		color: $detailsColor;
-	}
+  .details a {
+    color: $detailsColor;
+  }
 }

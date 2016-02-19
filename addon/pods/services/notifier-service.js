@@ -11,6 +11,12 @@ import Ember from 'ember'
  */
 
 /**
+ * Number of ms before notifications are removed when using removeNotification
+ * @type {Number}
+ */
+const removalDuration = 500
+
+/**
  * Manages all notifications
  */
 export default Ember.Service.extend({
@@ -35,7 +41,7 @@ export default Ember.Service.extend({
       throw new Error('No notification message set')
     }
 
-    var notification = Ember.Object.create({
+    const notification = Ember.Object.create({
       message: options.message,
       details: options.details,
       onDetailsClick: options.onDetailsClick,
@@ -65,7 +71,7 @@ export default Ember.Service.extend({
     // Delay removal from DOM for dismissal animation
     Ember.run.later(this, function () {
       this.notifications.removeObject(notification)
-    }.bind(this), 500)
+    }.bind(this), removalDuration)
   },
 
   /**
@@ -90,10 +96,6 @@ export default Ember.Service.extend({
    * @param {Number} clearDuration - duration in ms
    */
   setDefaultClearDuration: function (clearDuration) {
-    if (Ember.typeOf(clearDuration) !== 'number') {
-      throw new Error('Clear duration must be a number')
-    }
-
     this.set('defaultClearDuration', clearDuration)
   }
 })
