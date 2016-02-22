@@ -10,7 +10,7 @@
 // Container that houses the notification messages
 .frost-notifications-container {
   position: absolute;
-  top: 0;
+  top: $notification-top;
   left: 0;
   right: 0;
   margin-left: auto;
