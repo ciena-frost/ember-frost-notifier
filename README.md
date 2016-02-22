@@ -19,6 +19,7 @@ A service and component for managing application notifications
  * [Contributing](#Contributing)
 
 ## Installation
+
 ```
 ember install ember-frost-notifier
 ```
