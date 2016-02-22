@@ -72,7 +72,7 @@ export default Ember.Controller.extend({
 	actions: {
 		showNotification () {
 			this.get('notifier').addNotification({
-				message: 'Some terribly bad happened',
+				message: 'Something terribly bad happened',
 				details: 'It was bad. It was really really bad!',
 				onDetailsClick (details) {
 					console.log(details)
