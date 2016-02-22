@@ -1,7 +1,6 @@
 {
   "name": "ember-frost-notifier",
   "dependencies": {
-    "blanket": "^1.1.7",
     "bourbon": "^4.2.6",
     "ember": "^2.3.1",
     "ember-cli-shims": "^0.1.0",
