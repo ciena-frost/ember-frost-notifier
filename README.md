@@ -33,6 +33,8 @@ ember install ember-frost-notifier
 
 Adds a single notification to the list. Takes a single parameter `options` and returns the `notification` object.
 
+**NotificationOption**:
+
 | Name | Type | Description |
 | --------- | ----- | ----------- |
 | `message` | `String` | Message to display |
