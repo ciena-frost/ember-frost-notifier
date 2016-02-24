@@ -1,6 +1,6 @@
 {
   "name": "ember-frost-notifier",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "An ember service and component for managing application notifications",
   "directories": {
     "doc": "doc",
