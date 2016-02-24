@@ -1,1 +1,16 @@
+approve_by_comment: true
+approve_regex: ^(Approved|:\+1:)
 extends: base
+reset_on_push: true
+reviewers:
+  members:
+  - job13er
+  - sandersky
+  - psbanka
+  - cstolli
+  - agonza40
+  - sglanzer
+  - rox163
+  - laflower
+  - EWhite613
+  required: 1
