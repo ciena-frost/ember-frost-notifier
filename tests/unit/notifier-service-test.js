@@ -2,7 +2,7 @@ import {expect} from 'chai'
 import sinon from 'sinon'
 import Ember from 'ember'
 import wait from 'ember-test-helpers/wait'
-import NotifierService from 'frost-notifier/pods/services/notifier-service'
+import NotifierService from 'frost-notifier/pods/services/notifier'
 
 describe('Notifier Service', function () {
   let service, sandbox, notification
