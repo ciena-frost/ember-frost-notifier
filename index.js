@@ -4,7 +4,7 @@
 'use strict'
 
 module.exports = {
-  name: 'frost-notifier',
+  name: 'ember-frost-notifier',
 
   init: function (app) {
     this.options = this.options || {}
