@@ -7,13 +7,13 @@
           <div class='field'>
             <label>Message:</label>
             <div class='field-value'>
-            {{frost-text id="message-field" type="text" value=message on-input=(action 'text')}}
+            {{frost-text id="message-field" type="text" value=message onInput=(action 'text')}}
             </div>
           </div>
           <div class='field'>
             <label>Type:</label>
             <div class='field-value'>
-              {{frost-select data=selectData on-change=(action 'select')}}
+              {{frost-select data=selectData onChange=(action 'select')}}
             </div>
           </div>
           <div class='field'>
@@ -24,8 +24,8 @@
           </div>
           <div class='field'>
             <label></label>
-            {{#frost-button priority="secondary" on-click=(action 'clearAll')}}Clear all{{/frost-button}}
-            {{#frost-button id="show-notification" priority="primary" on-click=(action 'showNotification')}}Show{{/frost-button}}
+            {{#frost-button priority="secondary" onClick=(action 'clearAll')}}Clear all{{/frost-button}}
+            {{#frost-button id="show-notification" priority="primary" onClick=(action 'showNotification')}}Show{{/frost-button}}
           </div>
         </fieldset>
     </form>
