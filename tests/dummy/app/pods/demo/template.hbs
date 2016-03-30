@@ -24,8 +24,21 @@
           </div>
           <div class='field'>
             <label></label>
-            {{#frost-button priority="secondary" onClick=(action 'clearAll')}}Clear all{{/frost-button}}
-            {{#frost-button id="show-notification" priority="primary" onClick=(action 'showNotification')}}Show{{/frost-button}}
+            {{#frost-button
+              onClick=(action 'clearAll')
+              priority="secondary"
+              size="medium"
+            }}
+              Clear all
+            {{/frost-button}}
+            {{#frost-button
+              id="show-notification"
+              onClick=(action 'showNotification')
+              priority="primary"
+              size="medium"
+            }}
+              Show
+            {{/frost-button}}
           </div>
         </fieldset>
     </form>
