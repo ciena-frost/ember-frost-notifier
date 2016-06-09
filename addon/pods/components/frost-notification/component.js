@@ -22,11 +22,11 @@ export default Ember.Component.extend({
   notificationIcon: function (type) {
     switch (type) {
       case 'warning':
-        return 'notifications/warning'
+        return 'warning'
       case 'error':
-        return 'notifications/error'
+        return 'dialog-error'
       case 'info':
-        return 'notifications/info'
+        return 'info'
     }
   },
 
