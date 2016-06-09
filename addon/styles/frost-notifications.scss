@@ -32,8 +32,8 @@
   max-height: $notification-max-height;
   color: $frost-color-white;
   box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.25);
-  @include animation(frost-notifications-hide 250ms cubic-bezier(.33859, -.42, 1, -.22), frost-notifications-shrink 250ms 250ms cubic-bezier(.5, 0, 0, 1));
-  @include animation-fill-mode(forwards);
+  animation: frost-notifications-hide 250ms cubic-bezier(.33859, -.42, 1, -.22), frost-notifications-shrink 250ms 250ms cubic-bezier(.5, 0, 0, 1);
+  animation-fill-mode: forwards;
 }
 
 
@@ -41,7 +41,7 @@
 // -------------------------
 
 .frost-notifications-in {
-  @include animation(frost-notifications-show 180ms cubic-bezier(.175, .885, .32, 1.27499));
+  animation: frost-notifications-show 180ms cubic-bezier(.175, .885, .32, 1.27499);
 }
 
 
