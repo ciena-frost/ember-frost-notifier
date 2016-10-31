@@ -18,3 +18,7 @@
 npm-debug.log
 testem.log
 .idea
+/typing
+/visual-acceptance
+/typings
+/coverage

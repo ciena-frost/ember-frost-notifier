@@ -2,23 +2,27 @@
 // Notification mixins
 // --------------------------------------------------
 
+$bg-color: #fff;
+$notification-wrapper-bg: rgba($bg-color, .95);
 
-@mixin frost-notifications-theme($borderColor, $messageColor, $detailsColor) {
+@mixin frost-notifications-theme($border-color, $message-color, $details-color) {
 
   .notification-wrapper {
-    border: 1px solid $borderColor;
-    background-color: rgba(white, 0.95);
+    border: 1px solid $border-color;
+    background-color: $notification-wrapper-bg;
   }
 
   .message {
-    color: $messageColor;
+    color: $message-color;
   }
 
   .close {
-    color: $messageColor;
+    color: $message-color;
   }
 
-  .details a {
-    color: $detailsColor;
+  .details {
+    a {
+      color: $details-color;
+    }
   }
 }

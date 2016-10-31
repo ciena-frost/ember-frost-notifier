@@ -2,8 +2,19 @@ import Ember from 'ember'
 import layout from './template'
 import computed from 'ember-computed-decorators'
 
-export default Ember.Component.extend({
-  notifier: Ember.inject.service('notifier'),
+const {
+  Component,
+  inject,
+  A
+} = Ember
+
+export default Component.extend({
+  // == Services ==============================================================
+
+  notifier: inject.service('notifier'),
+
+  // == Component properties ==================================================
+
   layout: layout,
   classNames: ['frost-notifications'],
   classNameBindings: [
@@ -11,6 +22,8 @@ export default Ember.Component.extend({
     'notification.dismiss::frost-notifications-in',
     'autoClear::dismissable'
   ],
+
+  // == Computed properties ===================================================
 
   @computed('notification.type')
   /**
@@ -37,10 +50,12 @@ export default Ember.Component.extend({
    * @returns {String} class type
    */
   processedType: function (type) {
-    if (type && Ember.A(['info', 'success', 'warning', 'error']).contains(type)) {
+    if (type && A(['info', 'success', 'warning', 'error']).contains(type)) {
       return `frost-notifications-${type}`
     }
   },
+
+  // == Actions ===============================================================
 
   actions: {
     removeNotification () {

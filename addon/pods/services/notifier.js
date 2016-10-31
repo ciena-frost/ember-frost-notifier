@@ -30,6 +30,8 @@ export default Ember.Service.extend({
    */
   defaultClearDuration: 5000,
 
+  // FIXME: refactor to reduce complexity
+  /* eslint complexity: [2, 6] */
   /**
    * Adds a notifications
    * @param {NotificationOption} options - notification options

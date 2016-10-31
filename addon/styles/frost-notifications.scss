@@ -1,6 +1,8 @@
-@import "variables";
-@import "mixins";
-@import "keyframes";
+@import 'variables';
+@import 'mixins';
+@import 'keyframes';
+
+$frost-notification-box-shadow: rgba(0, 0, 0, .25);
 
 //
 // Notification component
@@ -11,11 +13,11 @@
 .frost-notifications-container {
   position: absolute;
   top: $notification-top;
-  left: 0;
   right: 0;
-  margin-left: auto;
-  margin-right: auto;
+  left: 0;
   width: $notification-width;
+  margin-right: auto;
+  margin-left: auto;
   z-index: $notification-zindex;
 }
 
@@ -24,16 +26,48 @@
 // -------------------------
 
 .frost-notifications {
-  font-size: $frost-font-s;
   position: relative;
-  margin-bottom: $notification-spacing;
-  overflow: hidden;
-  border-radius: $notification-border-radius;
   max-height: $notification-max-height;
+  margin-bottom: $notification-spacing;
+  border-radius: $notification-border-radius;
   color: $frost-color-white;
-  box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.25);
+  font-size: $frost-font-s;
+  box-shadow: 0 3px 3px 0 $frost-notification-box-shadow;
+  overflow: hidden;
   animation: frost-notifications-hide 250ms cubic-bezier(.33859, -.42, 1, -.22), frost-notifications-shrink 250ms 250ms cubic-bezier(.5, 0, 0, 1);
   animation-fill-mode: forwards;
+
+  .icon {
+    width: $notification-icon-width;
+    height: $notification-icon-height;
+  }
+
+  .message {
+    padding: $notification-padding;
+
+    .dismissable {
+      padding-right: $notification-icon-width;
+    }
+  }
+
+  .details {
+    padding-right: $notification-padding;
+
+    a {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+
+  .close {
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    padding-right: $notification-padding;
+    cursor: pointer;
+  }
 }
 
 
@@ -48,19 +82,6 @@
 // Notification content
 // -------------------------
 
-.frost-notifications .icon {
-  height: $notification-icon-height;
-  width: $notification-icon-width;
-}
-
-.frost-notifications .message {
-  padding: $notification-padding;
-}
-
-.frost-notifications .message .dismissable {
-  padding-right: $notification-icon-width;
-}
-
 .notification-wrapper {
   display: flex;
   align-items: center;
@@ -68,44 +89,27 @@
 
   .content {
     display: flex;
+    flex: 1;
     align-items: center;
     justify-content: center;
-    flex: 1;
   }
-}
-
-.frost-notifications .details {
-  padding-right: $notification-padding;
-
-  a {
-    text-decoration: underline;
-    cursor: pointer;
-  }
-}
-
-.frost-notifications .close {
-
-  svg {
-    height: 24px;
-    width: 24px;
-  }
-
-  cursor: pointer;
-  padding-right: $notification-padding;
 }
 
 // Notification themes
 // -------------------------
 
 .frost-notifications-success {
-  @include frost-notifications-theme($notification-success-bg, $notification-success-header-text, #43C9F7);
+  @include frost-notifications-theme($notification-success-bg, $notification-success-header-text, #43c9f7);
 }
+
 .frost-notifications-info {
-  @include frost-notifications-theme($notification-info-bg, $notification-info-header-text, #43C9F7);
+  @include frost-notifications-theme($notification-info-bg, $notification-info-header-text, #43c9f7);
 }
+
 .frost-notifications-error {
-  @include frost-notifications-theme($notification-error-bg, $notification-error-header-text, #43C9F7);
+  @include frost-notifications-theme($notification-error-bg, $notification-error-header-text, #43c9f7);
 }
+
 .frost-notifications-warning {
-  @include frost-notifications-theme($notification-warning-bg, $notification-warning-header-text, #43C9F7);
+  @include frost-notifications-theme($notification-warning-bg, $notification-warning-header-text, #43c9f7);
 }
