@@ -7,9 +7,33 @@
 [npm-img]: https://img.shields.io/npm/v/ember-frost-notifier.svg "NPM Version"
 [npm-url]: https://www.npmjs.com/package/ember-frost-notifier
 
-# ember-frost-notifier
+[ember-observer-badge]: http://emberobserver.com/badges/ember-frost-notifier.svg "Ember Observer score"
+[ember-observer-badge-url]: http://emberobserver.com/addons/ember-frost-notifier
+
+[ember-img]: https://img.shields.io/badge/ember-2.3+-orange.svg "Ember 2.3+"
 
 [![Travis][ci-img]][ci-url] [![Coveralls][cov-img]][cov-url] [![NPM][npm-img]][npm-url]
+
+[bithound-img]: https://www.bithound.io/github/ciena-frost/ember-frost-notifier/badges/score.svg "bitHound"
+[bithound-url]: https://www.bithound.io/github/ciena-frost/ember-frost-notifier
+
+# ember-frost-notifier
+###### Dependencies
+
+![Ember][ember-img]
+[![NPM][npm-img]][npm-url]
+
+###### Health
+
+[![Travis][ci-img]][ci-url]
+[![Coveralls][cov-img]][cov-url]
+
+###### Security
+
+[![bitHound][bithound-img]][bithound-url]
+
+###### Ember Observer score
+[![EmberObserver][ember-observer-badge]][ember-observer-badge-url]
 
 A service and component for managing application notifications
 
@@ -84,6 +108,16 @@ export default Ember.Controller.extend({
 	}
 })
 ```
+
+## Testing with ember-hook
+This addon has been optimized for use with [ember-hook](https://github.com/Ticketfly/ember-hook). You can set a `hook` name on your notifier template. 
+This will allow you to access the internal notifier content for testing.
+### Available hooks
+* Top level - `<hook-name>-notification-wrapper`
+* Notifier content - `<hook-name>-notification-wrapper-content`
+* Notifier content message - `<hook-name>-notification-wrapper-content-message`
+* Notifier content details - `<hook-name>-notification-wrapper-content-details`
+* Notifier close icon - `<hook-name>-notification-wrapper-close-icon`
 
 ##Contributing
 

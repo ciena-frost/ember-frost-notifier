@@ -19,16 +19,16 @@ $notification-icon-width: 30px !default;
 $notification-icon-height: 36px !default;
 $notification-icon-spacing: 5px !default;
 $notification-icon-position: 10px !default;
-$notification-icon-color: rgba($frost-color-white,.74) !default;
+$notification-icon-color: rgba($frost-color-white, .74) !default;
 
 
 // Notification themes
 // -------------------------
 
 // Success notification
-$notification-success-bg: #00AA3E;
+$notification-success-bg: #00aa3e;
 $notification-success-header-text: $frost-color-grey-1;
-$notification-success-details: #C6FF8A;
+$notification-success-details: #c6ff8a;
 $notification-success-details-text: #006823;
 
 // Neutral notification
@@ -38,13 +38,13 @@ $notification-info-details: $frost-color-teal-3;
 $notification-info-details-text: $frost-color-teal-2;
 
 // Warning notification
-$notification-warning-bg: #DDD326;
+$notification-warning-bg: #ddd326;
 $notification-warning-header-text: $frost-color-grey-1;
-$notification-warning-details: #FFF6B3;
-$notification-warning-details-text: #A89B00;
+$notification-warning-details: #fff6b3;
+$notification-warning-details-text: #a89b00;
 
 // Error notification
-$notification-error-bg: #E52C2C;
+$notification-error-bg: #e52c2c;
 $notification-error-header-text: $frost-color-grey-1;
-$notification-error-details: #FFBDBD;
-$notification-error-details-text: #A31414;
+$notification-error-details: #ffbdbd;
+$notification-error-details-text: #a31414;

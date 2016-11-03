@@ -1,29 +1,30 @@
+$demo-content-color: #231f20;
 
-.dummy-body{
+.dummy-body {
   margin-left: 20px;
 }
 
 .demo-application {
-    height: 100%;
+  height: 100%;
 }
 
 .demo-content {
   position: relative;
   padding: 30px;
-  color: #231F20;
+  color: $demo-content-color;
 }
 
 fieldset {
-  border: none;
-  padding: 10px;
   display: flex;
   flex-direction: column;
+  padding: 10px;
+  border: 0;
 
   legend {
     display: block;
+    margin-bottom: 20px;
     font-size: 24px;
     font-weight: bold;
-    margin-bottom: 20px;
   }
 
   .field {
@@ -33,14 +34,15 @@ fieldset {
 
     label {
       width: 150px;
-      text-align: right;
       margin-right: 5px;
+      text-align: right;
     }
 
     .field-value {
       width: 250px;
 
-      >div, input {
+      >div,
+      input {
         width: 100%;
       }
     }
@@ -49,5 +51,4 @@ fieldset {
       margin-right: 2px;
     }
   }
-
 }

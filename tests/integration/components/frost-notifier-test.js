@@ -35,8 +35,11 @@ describeComponent(
         this.render(hbs`{{frost-notifier}}`)
       })
 
-      it('the top-level container', function () {
+      it('the top-level container', function (done) {
         expect(this.$()).to.have.length(1)
+        return capture('frost-notifier', done, {
+          experimentalSvgs: true
+        })
       })
 
       it('multiple notifications', function () {
