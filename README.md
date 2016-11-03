@@ -109,6 +109,16 @@ export default Ember.Controller.extend({
 })
 ```
 
+## Testing with ember-hook
+This addon has been optimized for use with [ember-hook](https://github.com/Ticketfly/ember-hook). You can set a `hook` name on your notifier template. 
+This will allow you to access the internal notifier content for testing.
+### Available hooks
+* Top level - `<hook-name>-notification-wrapper`
+* Notifier content - `<hook-name>-notification-wrapper-content`
+* Notifier content message - `<hook-name>-notification-wrapper-content-message`
+* Notifier content details - `<hook-name>-notification-wrapper-content-details`
+* Notifier close icon - `<hook-name>-notification-wrapper-close-icon`
+
 ##Contributing
 
 This following outlines the details of collaborating on this Ember addon:

@@ -14,7 +14,10 @@
     {{/if}}
   </div>
 
-  <span class="close" {{action "removeNotification"}} title="Dismiss this notification">
+  <span class="close"
+    {{action "removeNotification"}}
+    title="Dismiss this notification"
+    data-test={{hook (concat hook '-notification-wrapper-close-icon')}}>
     {{frost-icon icon='close'}}
   </span>
 </div>

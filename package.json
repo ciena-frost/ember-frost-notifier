@@ -13,12 +13,12 @@
     "test": "npm run lint && COVERAGE=true ember test",
     "lint": "npm run eslint && npm run sass-lint && npm run md-lint",
     "md-lint": "remark *.md",
-    "eslint": "eslint *.js addon app config tests",
+    "eslint": "eslint *.js addon app config tests --fix",
     "sass-lint": "sass-lint -q -v"
   },
   "repository": "https://github.com/ciena-frost/ember-frost-notifier.git",
   "engines": {
-    "node": ">= 5.0.0"
+    "node": ">= 6.0.0"
   },
   "author": "Sophy Pal (https://github.com/sophypal)",
   "contributors": [

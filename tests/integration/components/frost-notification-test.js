@@ -3,10 +3,20 @@ import sinon from 'sinon'
 import {describeComponent, it} from 'ember-mocha'
 import hbs from 'htmlbars-inline-precompile'
 import Ember from 'ember'
+import {
+  $hook,
+  initialize as initializeHook
+} from 'ember-hook'
 
 const notifierStub = Ember.Service.extend({
   removeNotification: function () {}
 })
+
+const notifierHookName = '-notification-wrapper'
+const notifierContentHookName = `${notifierHookName}-content`
+const notifierContentMessageHookName = `${notifierHookName}-content-message`
+const notifierContentDetailsHookName = `${notifierHookName}-content-details`
+const notifierCloseIconHookName = `${notifierHookName}-close-icon`
 
 describeComponent(
   'frost-notification',
@@ -17,6 +27,7 @@ describeComponent(
   function () {
     let sandbox, notification
     beforeEach(function () {
+      initializeHook()
       sandbox = sinon.sandbox.create()
 
       this.register('service:notifier', notifierStub)
@@ -45,18 +56,22 @@ describeComponent(
       })
 
       it('the top-level container', function (done) {
-        expect(this.$()).to.have.length(1)
+        expect($hook(notifierHookName)).to.have.length(1)
+        expect($hook(notifierContentHookName)).to.have.length(1)
+        expect($hook(notifierContentMessageHookName)).to.have.length(1)
+        expect($hook(notifierContentDetailsHookName)).to.have.length(1)
+
         return capture('frost-notification', done, {
           experimentalSvgs: true
         })
       })
 
       it('the message', function () {
-        expect(this.$('.message').text()).to.match(/test message/)
+        expect($hook(notifierContentMessageHookName).text()).to.match(/test message/)
       })
 
       it('the details link', function () {
-        expect(this.$('.details')).to.have.length(1)
+        expect($hook(notifierContentDetailsHookName)).to.have.length(1)
       })
     })
 
@@ -64,7 +79,7 @@ describeComponent(
       this.set('notification.details', undefined)
 
       this.render(hbs`{{frost-notification notification=notification}}`)
-      expect(this.$('.details')).not.to.have.length(1)
+      expect($hook(notifierContentDetailsHookName)).not.to.have.length(1)
     })
 
     it('calls onDetailsClick when the details link is clicked', function () {
@@ -72,16 +87,21 @@ describeComponent(
 
       this.set('notification.onDetailsClick', spy)
       this.render(hbs`{{frost-notification notification=notification}}`)
-      this.$('.details a').click()
+      $hook(notifierContentDetailsHookName).find('a').click()
 
       expect(spy.calledWith('details')).to.equal(true)
     })
 
     it('removes the notification when closed', function () {
       this.render(hbs`{{frost-notification notification=notification}}`)
-      this.$('.close').click()
+      $hook(notifierCloseIconHookName).click()
 
       expect(this.get('notifier').removeNotification.called).to.equal(true)
+    })
+
+    it('change hook', function () {
+      this.render(hbs`{{frost-notification notification=notification hook='my-hook'}}`)
+      expect($hook(`my-hook${notifierHookName}`)).to.have.length(1)
     })
   }
 )
