@@ -37,7 +37,7 @@ export default Component.extend({
       case 'warning':
         return 'warning'
       case 'error':
-        return 'dialog-error'
+        return 'error'
       case 'info':
         return 'info'
     }

@@ -1,7 +1,7 @@
 <div class="notification-wrapper" data-test={{hook (concat hook '-notification-wrapper')}}>
   <div class="content" data-test={{hook (concat hook '-notification-wrapper-content')}}>
     {{#unless (eq notification.type "success")}}
-      {{frost-icon icon=notificationIcon class="icon"}}
+      {{frost-icon icon=notificationIcon pack='frost-notifier' class="icon"}}
     {{/unless}}
     <div class="message" data-test={{hook (concat hook '-notification-wrapper-content-message')}}>
       {{notification.message}}
