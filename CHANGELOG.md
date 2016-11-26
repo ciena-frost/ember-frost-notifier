@@ -1,3 +1,8 @@
+# 3.1.0
+* Add icons
+
+
+
 # 3.0.0
 - **Update** to ember@2.8
 - **Update** all other dependencies
