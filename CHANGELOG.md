@@ -1,3 +1,6 @@
+# 4.0.0
+- All functionality was maintained
+
 # 3.1.0
 * Add icons
 
