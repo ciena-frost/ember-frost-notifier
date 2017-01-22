@@ -1,11 +1,11 @@
 import Ember from 'ember'
 import layout from './template'
-import computed from 'ember-computed-decorators'
+import computed, {readOnly} from 'ember-computed-decorators'
 
 const {
+  A,
   Component,
-  inject,
-  A
+  inject
 } = Ember
 
 export default Component.extend({
@@ -25,6 +25,7 @@ export default Component.extend({
 
   // == Computed properties ===================================================
 
+  @readOnly
   @computed('notification.type')
   /**
    * Computed icon path based on type
@@ -43,6 +44,7 @@ export default Component.extend({
     }
   },
 
+  @readOnly
   @computed('notification.type')
   /**
    * Class name binding for type

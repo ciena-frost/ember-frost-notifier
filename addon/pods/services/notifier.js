@@ -1,4 +1,5 @@
 import Ember from 'ember'
+const {A, Service, run} = Ember
 
 /**
  * @typedef {Object} NotificationOption
@@ -19,9 +20,9 @@ const removalDuration = 500
 /**
  * Manages all notifications
  */
-export default Ember.Service.extend({
+export default Service.extend({
   init: function () {
-    this.notifications = Ember.A()
+    this.notifications = A()
   },
 
   /**
@@ -71,7 +72,7 @@ export default Ember.Service.extend({
     }
     notification.set('dismiss', true)
     // Delay removal from DOM for dismissal animation
-    Ember.run.later(this, function () {
+    run.later(this, function () {
       this.notifications.removeObject(notification)
     }.bind(this), removalDuration)
   },
@@ -81,7 +82,7 @@ export default Ember.Service.extend({
    * @param {NotificationOption} notification - notification instance
    */
   setupAutoClear: function (notification) {
-    Ember.run.later(this, function () {
+    run.later(this, function () {
       // Hasn't been closed manually
       if (this.notifications.indexOf(notification) >= 0) {
         this.notifications.removeObject(notification)
@@ -90,7 +91,7 @@ export default Ember.Service.extend({
   },
 
   clearAll: function () {
-    this.set('notifications', Ember.A())
+    this.set('notifications', A())
   },
 
   /**

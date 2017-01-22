@@ -1,14 +1,12 @@
 import {expect} from 'chai'
-import sinon from 'sinon'
+import Ember from 'ember'
+const {Service} = Ember
+import {$hook, initialize as initializeHook} from 'ember-hook'
 import {describeComponent, it} from 'ember-mocha'
 import hbs from 'htmlbars-inline-precompile'
-import Ember from 'ember'
-import {
-  $hook,
-  initialize as initializeHook
-} from 'ember-hook'
+import sinon from 'sinon'
 
-const notifierStub = Ember.Service.extend({
+const notifierStub = Service.extend({
   removeNotification: function () {}
 })
 
