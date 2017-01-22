@@ -7,25 +7,41 @@
           <div class='field'>
             <label>Message:</label>
             <div class='field-value'>
-            {{frost-text id="message-field" type="text" value=message onInput=(action 'text')}}
+            {{frost-text
+              hook='message'
+              id="message-field"
+              onInput=(action 'text')
+              type="text"
+              value=message
+            }}
             </div>
           </div>
           <div class='field'>
             <label>Type:</label>
             <div class='field-value'>
-              {{frost-select data=selectData onChange=(action 'select')}}
-              {{frost-select-outlet}}
+              {{frost-select
+                data=selectData
+                hook='type'
+                onChange=(action 'select')
+              }}
+              {{frost-select-outlet
+                hook='selectOutlet'
+              }}
             </div>
           </div>
           <div class='field'>
             <label>Timeout:</label>
             <div class='field-value'>
-              {{frost-text value=clearDuration}}
+              {{frost-text
+                hook='clearDuration'
+                value=clearDuration
+              }}
             </div>
           </div>
           <div class='field'>
             <label></label>
             {{#frost-button
+              hook='clearAllButton'
               onClick=(action 'clearAll')
               priority="secondary"
               size="medium"
@@ -33,6 +49,7 @@
               Clear all
             {{/frost-button}}
             {{#frost-button
+              hook='showNotificationButton'
               id="show-notification"
               onClick=(action 'showNotification')
               priority="primary"

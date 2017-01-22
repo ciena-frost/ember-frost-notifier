@@ -1,10 +1,11 @@
 import Ember from 'ember'
+const {Controller, Logger, inject} = Ember
 
-export default Ember.Controller.extend({
-  notifier: Ember.inject.service('notifier'),
+export default Controller.extend({
+  notifier: inject.service('notifier'),
   message: 'Notification message',
   type: 'success',
-  clearDuration: 5000,
+  clearDuration: '5000',
   details: 'Notification details',
   isError: false,
   autoClear: false,
@@ -21,6 +22,7 @@ export default Ember.Controller.extend({
     label: 'warning',
     value: 'warning'
   }],
+
   actions: {
     text (attrs) {
       this.set('message', attrs.value)
@@ -48,11 +50,11 @@ export default Ember.Controller.extend({
         message: this.get('message'),
         details: this.get('details'),
         onDetailsClick: function (details) {
-          console.log(details)
+          Logger.log(details)
         },
         type: type,
         autoClear: this.get('autoClear'),
-        clearDuration: this.get('clearDuration')
+        clearDuration: parseInt(this.get('clearDuration'))
       })
     }
   }

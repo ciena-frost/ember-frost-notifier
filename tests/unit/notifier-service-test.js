@@ -1,7 +1,9 @@
 import {expect} from 'chai'
-import sinon from 'sinon'
 import Ember from 'ember'
+const {run} = Ember
 import wait from 'ember-test-helpers/wait'
+import sinon from 'sinon'
+
 import NotifierService from 'ember-frost-notifier/pods/services/notifier'
 
 describe('Notifier Service', function () {
@@ -59,7 +61,7 @@ describe('Notifier Service', function () {
 
   describe('removeNotification', function () {
     it('removes from the notifications array', function (done) {
-      Ember.run(function () {
+      run(function () {
         let emberObject = Ember.Object.create(notification)
         service.notifications.pushObject(emberObject)
         service.removeNotification(emberObject)
@@ -97,7 +99,7 @@ describe('Notifier Service', function () {
 
   describe('setupAutoClear', function () {
     it('removes the notification after clearDuration', function (done) {
-      Ember.run(function () {
+      run(function () {
         let emberObject = Ember.Object.create(notification)
         service.notifications.pushObject(emberObject)
         service.setupAutoClear(emberObject)

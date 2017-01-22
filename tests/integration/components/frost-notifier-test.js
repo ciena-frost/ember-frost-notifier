@@ -1,10 +1,11 @@
 import {expect} from 'chai'
+import Ember from 'ember'
+const {A, Service} = Ember
 import {describeComponent, it} from 'ember-mocha'
 import hbs from 'htmlbars-inline-precompile'
-import Ember from 'ember'
 
-const notifierStub = Ember.Service.extend({
-  notifications: Ember.A([
+const notifierStub = Service.extend({
+  notifications: A([
     {
       message: 'test message 1',
       type: 'info',
