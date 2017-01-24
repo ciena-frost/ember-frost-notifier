@@ -1,3 +1,8 @@
+# 4.1.2
+
+* **Upgraded** to test against Ember 2.11.
+
+
 # 4.1.1
 - contains -> includes when processing types
 
