@@ -52,7 +52,7 @@ export default Component.extend({
    * @returns {String} class type
    */
   processedType: function (type) {
-    if (type && A(['info', 'success', 'warning', 'error']).contains(type)) {
+    if (type && A(['info', 'success', 'warning', 'error']).includes(type)) {
       return `frost-notifications-${type}`
     }
   },
