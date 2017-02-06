@@ -1,3 +1,6 @@
+# 4.2.1
+* **Updated** integration tests to remove the deprecated use of `describeComponent()`
+
 # 4.2.0
 
 * **Removed** `lodash` as it isn't needed by this addon.
