@@ -1,3 +1,9 @@
+# 4.2.0
+
+* **Removed** `lodash` as it isn't needed by this addon.
+* **Updated** CI to test both Chrome and Firefox.
+
+
 # 4.1.2
 
 * **Upgraded** to test against Ember 2.11.
