@@ -1,12 +1,8 @@
 import Ember from 'ember'
-import layout from './template'
+const {Component, inject} = Ember
 import computed, {readOnly} from 'ember-computed-decorators'
 
-const {
-  A,
-  Component,
-  inject
-} = Ember
+import layout from './template'
 
 export default Component.extend({
   // == Services ==============================================================
@@ -52,7 +48,7 @@ export default Component.extend({
    * @returns {String} class type
    */
   processedType: function (type) {
-    if (type && A(['info', 'success', 'warning', 'error']).includes(type)) {
+    if (type && ['info', 'success', 'warning', 'error'].indexOf(type) !== -1) {
       return `frost-notifications-${type}`
     }
   },
