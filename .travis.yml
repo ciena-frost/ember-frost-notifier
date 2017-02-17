@@ -1,12 +1,11 @@
 sudo: required
 dist: trusty
 language: node_js
+
 node_js:
-  - '6.9'
+  - '6.9.1'
   - 'stable'
-branches:
-  except:
-  - /^v[0-9\.]+/
+
 addons:
   apt:
     sources:
@@ -15,41 +14,39 @@ addons:
     packages:
     - google-chrome-stable
     - g++-4.8
+  firefox: 'latest-esr'
+
 env:
   matrix:
-    - EMBER_TRY_SCENARIO=ember-2-3
-    - EMBER_TRY_SCENARIO=ember-2-8
-    - EMBER_TRY_SCENARIO=default
-    - EMBER_TRY_SCENARIO=ember-release
+  - EMBER_TRY_SCENARIO=ember-2-3
+  - EMBER_TRY_SCENARIO=ember-2-8
+  - EMBER_TRY_SCENARIO=default
+  - EMBER_TRY_SCENARIO=ember-release
   global:
     - CXX=g++-4.8
     - secure: ZVIpgi8DCmrLPGePTznSFaKoj6ncLAdHZfHhMUdGXq0k35ToSBDcehVo4olDV3Nq4r3q2om3Xkqb+A7xlQ9W5iP1crpKyrciAOlmJi9VqGj3U9bHlWvzF/d+jmQnWICUeO2pYt5cHhjMahAQBaECzj9pnmMlkDtytwVXfSljqjzGYvValDaEJIk11T7FYpuMaD5P74nRy2gHmg+m+ebuXOUUjpeJLDejSfNZR6Ahj5hliqpuIUohxJI/vYwTWH6TcjLUSI5rv8qjBL3z9XDPs9nNir50GfxRuLR+4555t1N74ZfBUFQ8Fa7pqkgwVQpv2z53PHlNps19RA4e+utI6haXFzISSjdox/TwZSI/hOWjFSlh3MRicu71f6U1CVqvWnpE+Wj1a2B+EQLKfpeTRJpWdOVvbELGgz63eJeFx6s6vF5nSZB62Tg8NGSN77m3KWcyQLmvn9C+PAMyoJiy3qE3JKSvTdrqPbAbuzN+EREza1SXcbRBIIn+M1LQg+wz6qGiVrqgFhN8B2tRtcJQd8yBuQpWo0wu6y3tMzibe4MFmJJW7fHqruTqMRWWEbzTM8FTg1gPn9MNtg/vdeB+dlN9zdOPyI9bkmcdzWHTWZNjMPx44BedXtT7XGY7Zi9r0pQVUAw8PEi2meimPdph944Fr2xvT8pMhi1Gu0ZJbiM=
+
 matrix:
   fast_finish: true
   allow_failures:
   - env: EMBER_TRY_SCENARIO=ember-release
+
 before_install:
-- npm config set spin false
-- npm install -g coveralls pr-bumper
-- pr-bumper check
-before_script:
 - "export DISPLAY=:99.0"
 - "sh -e /etc/init.d/xvfb start"
-- sleep 3 # give xvfb some time to start
-- sudo apt-get update
-- sudo apt-get install -y libappindicator1 fonts-liberation
-- wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-- sudo dpkg -i google-chrome*.deb
+- npm config set spin false
+- npm install -g coveralls pr-bumper
+
 install:
-- npm install
-- bower install
+- $(npm root -g)/pr-bumper/.travis/maybe-install.sh
+
 script:
-- npm run lint
-- ember try:one $EMBER_TRY_SCENARIO --- ember tva --push-var='false' --msg-on=$EMBER_TRY_SCENARIO
+- $(npm root -g)/pr-bumper/.travis/maybe-test.sh
+- if [ $EMBER_TRY_SCENARIO == "default" ]; then $(npm root -g)/pr-bumper/.travis/maybe-bump-version.sh; fi
+
 after_success:
-- .travis/publish-coverage.sh
-before_deploy:
-- pr-bumper bump
+- $(npm root -g)/pr-bumper/.travis/maybe-publish-coverage.sh
+
 deploy:
   provider: npm
   email: npm.ciena@gmail.com
@@ -57,12 +54,14 @@ deploy:
   api_key:
     secure: KihvHjmnEUf7Br5Z+UO3sdgBNBB8uzocPXt58n0QfOBi2tj3j79mZiWdxvgsEpwEOKcAGNEOe2ByymkC1d4ujnkaL5lbAd7jtWB3BrrIRM/acCE9peFllr27+ycZSAFc5uSPHCC/02xFOb/X4CSDkgiamrcVlmIAv2CDS/+0/ECFMj5mKU8Z27xgTzM7EdxZMkDDAoMHmzagIePUck2etk10prX7L7bRw55PIrkH0MT9mapAfXL2fxwvGznIkU612ATQIpNIMOX8XZncZsPXLDaaMnwU/3y+AMnud7NZeHEXXruB+RdWlaGmd+c9dzIghXo8zQtdsJtp/xscaB0fulHeOY+lq9z/s5UyAgO9KvM9rWocyZuhHPGk3YcA1JsQKVwZT35KtJ/pPaxKXsXH4IhTRTxltC9hp5HiwD9dp5a3CPp/8XLehJsnUEO1Muli6A5QC8g9xm8X9RxKGZgTK00kZ5MkdNmDSp0L8d3DUYuB/vNyIKJpjthyKYF0H0gIIW3Px5KdhEnQE+97tHWHmYEb1jBwT2x/2zNl+GfSx1pbeOSd17lWcTO+K/QyQCFYDsY2lUOMVSk5+orHIghaqyWln+693O+B7/AvPRe3AEhT3CoZbh4IrxBPFObkUWmwmWTSvB0w5KMmunCh+n6C0wFVGRfVvOS5kR9CUL61678=
   on:
-    branch: master
+    all_branches: true
     condition: "$EMBER_TRY_SCENARIO = 'default'"
     node: 'stable'
     tags: true
+
 after_deploy:
 - .travis/publish-gh-pages.sh
+
 notifications:
   slack:
     secure: Boyj5lyVYRngIAA7ah2pLrHzgSvZ8pkK+xu1R0nvLhJelNpUSpP9mqKV+fVbURbbIemVEDGgjZ/TmRkH9+Xf9rwkeGLwfJvhtEbxC2z7t+Xso5CDF3bFrG1+7QneXdn7Tp59t6ycY2Ccaroe7Bg9hae2OnNIXQytPaeeFvhHZkD5vfpG6BEyDOyPzHvpzLnltAn583YSB0mC7TCYihoqUh9NMsVFiMIkixKH3W1OjqSjywQqJV9qvvXDo5xT8iNM+yWXLSZgyxUPW6hI+CHGaqPEYug5My+A6fhG8Gat3BwU+Y1mnybDfaJEvORapR+cM0PDmX1YJDOC6hxurChY/WuXSPT45vogf4XBFAtMG6q1E0sB2gl2n/+FaI3tJR3A6GIz3qQ6qqjSly1uf40hiEYgz8CML6DqmE35gQk/BWDnhm+1MjysHPgEnofoI7PFh0x4/q3EgDvctKf5nKD+wOpj5eRiIg1hDlMtJ7ToobPULrhpnw2SxXS6CYwsuooWPhBLSXaiDGkae3jguDaSMQMr2PnmvsjCmEnj1k6rna3uY+OljQ/IiDJS/Xlx1h11nV/+ZsUwan4o/beZjyPKJxuHyEBClOURv9NQM+eUHXhvrwTMd0Q935msOxF+ioOodR8xy4cE1JQCiyGSzwud6fM8+pnKYvPtzLRNlP3j+Gs=
