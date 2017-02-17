@@ -1,3 +1,7 @@
+# 4.2.2
+* **Fixed** build by disable dependency snapshot which is causing build to fail and not publish.
+
+
 # 4.2.1
 * **Updated** integration tests to remove the deprecated use of `describeComponent()`
 
