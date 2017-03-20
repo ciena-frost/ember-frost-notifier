@@ -1,3 +1,6 @@
+# 4.2.4 (2017-03-20)
+* **Used** info, warning and error icons from `ember-frost-core`
+
 # 4.2.3
 * **Updated** the travis scripts used for bumping and publishing
 
