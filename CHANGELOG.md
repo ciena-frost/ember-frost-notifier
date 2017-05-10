@@ -1,3 +1,7 @@
+# 4.3.1 (2017-05-10)
+* **Updated** secure auth tokens
+
+
 # 4.3.0 (2017-04-06)
 * **Remove** `blueprints` and use `dependencies` in `package.json` instead to make sure `ember-frost-core` is installed too. 
 
