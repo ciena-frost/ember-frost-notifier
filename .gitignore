@@ -21,3 +21,4 @@ testem.log
 /visual-acceptance
 /typings
 /coverage
+.DS_Store
