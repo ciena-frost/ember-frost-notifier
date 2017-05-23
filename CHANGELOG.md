@@ -1,3 +1,7 @@
+# 4.3.2 (2017-05-23)
+* **Fixed** display of long, unbroken strings (resolves [#39](https://github.com/ciena-frost/ember-frost-notifier/issues/39))
+
+
 # 4.3.1 (2017-05-10)
 * **Updated** secure auth tokens
 
