@@ -1,6 +1,7 @@
 @import 'variables';
 @import 'mixins';
 @import 'keyframes';
+@import 'node_modules/ember-frost-core/addon/styles/z-index';
 
 $frost-notification-box-shadow: rgba(0, 0, 0, .25);
 
@@ -18,7 +19,7 @@ $frost-notification-box-shadow: rgba(0, 0, 0, .25);
   width: $notification-width;
   margin-right: auto;
   margin-left: auto;
-  z-index: $notification-zindex;
+  z-index: $frost-z-index-notification;
 }
 
 
