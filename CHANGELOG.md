@@ -1,3 +1,7 @@
+# 4.3.3 (2017-05-31)
+* Make use of ember-frost-core z-index variable
+
+
 # 4.3.2 (2017-05-23)
 * **Fixed** display of long, unbroken strings (resolves [#39](https://github.com/ciena-frost/ember-frost-notifier/issues/39))
 
