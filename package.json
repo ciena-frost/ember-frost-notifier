@@ -1,6 +1,6 @@
 {
   "name": "ember-frost-notifier",
-  "version": "4.3.4",
+  "version": "5.0.0-beta.0",
   "description": "An ember service and component for managing application notifications",
   "frostGuideDirectory": "ui-components/indicator-controls/notifications",
   "directories": {
@@ -23,7 +23,8 @@
     "Roxanne Panthaky (https://github.com/rox163)",
     "Steven Glanzer (https://github.com/sglanzer)",
     "David Fortin (https://github.com/dafortin)",
-    "Matthew Dahl (https://github.com/sandersky)"
+    "Matthew Dahl (https://github.com/sandersky)",
+    "Adam Meadows (https://github.com/job13er)"
   ],
   "license": "MIT",
   "devDependencies": {
