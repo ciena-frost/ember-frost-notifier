@@ -2,63 +2,68 @@
   <div class="demo-content">
     {{frost-notifier}}
     <form>
-        <fieldset>
-          <legend>Frost Notifications</legend>
-          <div class='field'>
-            <label>Message:</label>
-            <div class='field-value'>
+      <fieldset>
+        <legend>Frost Notifications</legend>
+        <div class='field'>
+          <label>Message:</label>
+          <div class='field-value'>
             {{frost-text
               hook='message'
               id="message-field"
-              onInput=(action 'text')
               type="text"
               value=message
+
+              onInput=(action 'text')
             }}
-            </div>
           </div>
-          <div class='field'>
-            <label>Type:</label>
-            <div class='field-value'>
-              {{frost-select
-                data=selectData
-                hook='type'
-                onChange=(action 'select')
-              }}
-              {{frost-select-outlet
-                hook='selectOutlet'
-              }}
-            </div>
-          </div>
-          <div class='field'>
-            <label>Timeout:</label>
-            <div class='field-value'>
-              {{frost-text
-                hook='clearDuration'
-                value=clearDuration
-              }}
-            </div>
-          </div>
-          <div class='field'>
-            <label></label>
-            {{#frost-button
-              hook='clearAllButton'
-              onClick=(action 'clearAll')
-              priority="secondary"
-              size="medium"
+        </div>
+        <div class='field'>
+          <label>Type:</label>
+          <div class='field-value'>
+            {{frost-select
+              data=selectData
+              hook='type'
+
+              onChange=(action 'select')
             }}
-              Clear all
-            {{/frost-button}}
-            {{#frost-button
-              hook='showNotificationButton'
-              id="show-notification"
-              onClick=(action 'showNotification')
-              priority="primary"
-              size="medium"
+
+            {{frost-select-outlet
+              hook='selectOutlet'
             }}
-              Show
-            {{/frost-button}}
           </div>
-        </fieldset>
+        </div>
+        <div class='field'>
+          <label>Timeout:</label>
+          <div class='field-value'>
+            {{frost-text
+              hook='clearDuration'
+              value=clearDuration
+            }}
+          </div>
+        </div>
+        <div class='field'>
+          <label></label>
+          {{#frost-button
+            hook='clearAllButton'
+            priority="secondary"
+            size="medium"
+
+            onClick=(action 'clearAll')
+          }}
+            Clear all
+          {{/frost-button}}
+          {{#frost-button
+            hook='showNotificationButton'
+            id="show-notification"
+            priority="primary"
+            size="medium"
+
+            onClick=(action 'showNotification')
+          }}
+            Show
+          {{/frost-button}}
+        </div>
+      </fieldset>
     </form>
   </div>
 </div>

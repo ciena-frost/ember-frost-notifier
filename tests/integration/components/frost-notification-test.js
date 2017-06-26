@@ -2,11 +2,10 @@ import {expect} from 'chai'
 import Ember from 'ember'
 const {Service} = Ember
 import {$hook, initialize as initializeHook} from 'ember-hook'
+import {integration} from 'ember-test-utils/test-support/setup-component-test'
 import hbs from 'htmlbars-inline-precompile'
 import {afterEach, beforeEach, describe, it} from 'mocha'
 import sinon from 'sinon'
-
-import {integration} from 'dummy/tests/helpers/ember-test-utils/setup-component-test'
 
 const notifierStub = Service.extend({
   removeNotification: function () {}
