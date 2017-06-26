@@ -1,3 +1,11 @@
+# 4.3.4 (2017-06-26)
+* **Upgraded** to `pr-bumper@2.x`
+* **Upgraded** to recent `ember-cli-code-coverage`
+* **Upgraded** `ember-test-utils`
+* **Fixed** template lint errors that now properly failed build (thanks to updated `ember-test-utils`)
+* **Enabled** code coverage feature in `pr-bumper`
+
+
 # 4.3.3 (2017-05-31)
 * Make use of ember-frost-core z-index variable
 
