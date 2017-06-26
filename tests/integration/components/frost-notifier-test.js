@@ -31,18 +31,19 @@ describe(test.label, function () {
 
   describe('renders', function () {
     beforeEach(function () {
-      this.render(hbs`{{frost-notifier}}`)
+      this.render(hbs`
+        {{frost-notifier
+          hook='notifier'
+        }}
+      `)
     })
 
-    it('the top-level container', function (done) {
+    it('the top-level container', function () {
       expect(this.$()).to.have.length(1)
-      return capture('frost-notifier', done, {
-        experimentalSvgs: true
-      })
     })
 
     it('multiple notifications', function () {
-      expect(this.$('.frost-notifications')).to.have.length(2)
+      expect(this.$('.frost-notification')).to.have.length(2)
     })
   })
 })
