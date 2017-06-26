@@ -1,0 +1,5 @@
+{{#each notifier.notifications as |notification|}}
+  {{#frost-notification notification=notification}}
+    {{yield}}
+  {{/frost-notification}}
+{{/each}}

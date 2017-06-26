@@ -18,6 +18,7 @@
 npm-debug.log
 testem.log
 .idea
+/visual-acceptance
 /typings
 /coverage
 .DS_Store
