@@ -1,15 +1,37 @@
 import Ember from 'ember'
-const {Component, inject} = Ember
+const {inject} = Ember
+import {Component} from 'ember-frost-core'
 
 import layout from 'ember-frost-notifier/templates/components/frost-notifier'
 
 export default Component.extend({
-  // == Services ==============================================================
+  // == Dependencies ==========================================================
 
-  notifier: inject.service('notifier'),
+  notifier: inject.service(),
 
-  // == Component properties ==================================================
+  // == Keyword Properties ====================================================
 
-  layout: layout,
-  classNames: ['frost-notifications-container']
+  classNames: ['frost-notifications-container'],
+  layout,
+
+  // == PropTypes =============================================================
+
+  propTypes: {},
+
+  getDefaultProps () {
+    return {}
+  },
+
+  // == Computed Properties ===================================================
+
+  // == Functions =============================================================
+
+  // == DOM Events ============================================================
+
+  // == Lifecycle Hooks =======================================================
+
+  // == Actions ===============================================================
+
+  actions: {
+  }
 })

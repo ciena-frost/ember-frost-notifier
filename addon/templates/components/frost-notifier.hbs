@@ -1,5 +1,9 @@
-{{#each notifier.notifications as |notification|}}
-  {{#frost-notification notification=notification}}
+{{#each notifier.notifications as |notification index|}}
+  {{#frost-notification
+    hook=(concat hookQualifiers '-notification')
+    hookQualifiers=(extend hookQualifiers index=index)
+    notification=notification
+  }}
     {{yield}}
   {{/frost-notification}}
 {{/each}}
