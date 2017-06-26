@@ -1,55 +1,23 @@
 import Ember from 'ember'
-const {inject} = Ember
+const {Component, inject} = Ember
 import computed, {readOnly} from 'ember-computed-decorators'
-import {Component} from 'ember-frost-core'
-import {PropTypes} from 'ember-prop-types'
 
-import layout from 'ember-frost-notifier/templates/components/frost-notification'
+import layout from './template'
 
 export default Component.extend({
-  // == Dependencies ==========================================================
+  // == Services ==============================================================
 
-  notifier: inject.service(),
+  notifier: inject.service('notifier'),
 
-  // == Keyword properties ====================================================
+  // == Component properties ==================================================
 
+  layout: layout,
+  classNames: ['frost-notifications'],
   classNameBindings: [
     'processedType',
     'notification.dismiss::frost-notifications-in',
     'autoClear::dismissable'
   ],
-  layout,
-
-  // == PropTypes =============================================================
-
-  propTypes: {
-    i18n: PropTypes.shape({
-      labels: PropTypes.shape({
-        dismissThisNotification: PropTypes.string.isRequired,
-        openDetails: PropTypes.string.isRequired
-      }).isRequired
-    }),
-    notification: PropTypes.shape({
-      autoClear: PropTypes.bool,
-      clearDuration: PropTypes.number,
-      details: PropTypes.any,
-      message: PropTypes.string.isRequired,
-      type: PropTypes.oneOf(['warning', 'error', 'info', 'success']).isRequired,
-
-      onDetailsClick: PropTypes.func
-    }).isRequired
-  },
-
-  getDefaultProps () {
-    return {
-      i18n: {
-        labels: {
-          dismissThisNotification: 'Dismiss this notification',
-          openDetails: 'Open details'
-        }
-      }
-    }
-  },
 
   // == Computed properties ===================================================
 
@@ -88,15 +56,14 @@ export default Component.extend({
   // == Actions ===============================================================
 
   actions: {
-    handleDetailsClick () {
+    removeNotification () {
+      this.get('notifier').removeNotification(this.get('notification'))
+    },
+    onDetailsClicked () {
       const notification = this.get('notification')
       if (notification.onDetailsClick) {
         notification.onDetailsClick(notification.details)
       }
-    },
-
-    removeNotification () {
-      this.get('notifier').removeNotification(this.get('notification'))
     }
   }
 })

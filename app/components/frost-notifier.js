@@ -1,1 +1,1 @@
-export {default} from 'ember-frost-notifier/components/frost-notifier'
+export {default} from 'ember-frost-notifier/pods/components/frost-notifier/component'

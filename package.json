@@ -1,6 +1,6 @@
 {
   "name": "ember-frost-notifier",
-  "version": "5.0.0-beta.0",
+  "version": "4.3.4",
   "description": "An ember service and component for managing application notifications",
   "frostGuideDirectory": "ui-components/indicator-controls/notifications",
   "directories": {
@@ -23,13 +23,11 @@
     "Roxanne Panthaky (https://github.com/rox163)",
     "Steven Glanzer (https://github.com/sglanzer)",
     "David Fortin (https://github.com/dafortin)",
-    "Matthew Dahl (https://github.com/sandersky)",
-    "Adam Meadows (https://github.com/job13er)"
+    "Matthew Dahl (https://github.com/sandersky)"
   ],
   "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "^2.5.0",
-    "chai-jquery": "^2.0.0",
     "ember-cli": "~2.11.0",
     "ember-cli-chai": "0.3.2",
     "ember-cli-code-coverage": "^0.3.10",
@@ -41,6 +39,7 @@
     "ember-cli-mocha": "0.13.2",
     "ember-cli-test-loader": "^1.1.1",
     "ember-cli-uglify": "^1.2.0",
+    "ember-cli-visual-acceptance": "^2.2.0",
     "ember-computed-decorators": "0.3.0",
     "ember-concurrency": "0.7.19",
     "ember-disable-prototype-extensions": "^1.1.0",
@@ -56,8 +55,7 @@
     "ember-spread": "^1.1.1",
     "ember-test-utils": "^5.1.1",
     "ember-truth-helpers": "^1.3.0",
-    "loader.js": "^4.1.0",
-    "sinon-chai": "^2.11.0"
+    "loader.js": "^4.1.0"
   },
   "keywords": [
     "ember-addon",

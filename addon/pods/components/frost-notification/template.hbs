@@ -1,0 +1,33 @@
+<div
+  class="notification-wrapper"
+  data-test={{hook (concat hook '-notification-wrapper')}}
+>
+  <div class="content" data-test={{hook (concat hook '-notification-wrapper-content')}}>
+    {{#unless (eq notification.type "success")}}
+      {{frost-icon
+        class="icon"
+        hook=(concat hook '-notificationIcon')
+        icon=notificationIcon
+      }}
+    {{/unless}}
+    <div class="message" data-test={{hook (concat hook '-notification-wrapper-content-message')}}>
+      {{notification.message}}
+    </div>
+
+    {{#if notification.details}}
+      <div class="details" data-test={{hook (concat hook '-notification-wrapper-content-details')}}>
+        <a role="button" {{action 'onDetailsClicked'}}>Open Details</a>
+      </div>
+    {{/if}}
+  </div>
+
+  <span
+    {{action "removeNotification"}}
+    class="close"
+    data-test={{hook (concat hook '-notification-wrapper-close-icon')}}
+    role="button"
+    title="Dismiss this notification"
+  >
+    {{frost-icon hook=(concat hook '-closeIcon') icon='close'}}
+  </span>
+</div>
