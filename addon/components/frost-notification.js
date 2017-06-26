@@ -2,7 +2,7 @@ import Ember from 'ember'
 const {Component, inject} = Ember
 import computed, {readOnly} from 'ember-computed-decorators'
 
-import layout from './template'
+import layout from 'ember-frost-notifier/templates/components/frost-notification'
 
 export default Component.extend({
   // == Services ==============================================================

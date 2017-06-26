@@ -1,7 +1,7 @@
 import Ember from 'ember'
 const {Component, inject} = Ember
 
-import layout from './template'
+import layout from 'ember-frost-notifier/templates/components/frost-notifier'
 
 export default Component.extend({
   // == Services ==============================================================

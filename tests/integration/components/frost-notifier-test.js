@@ -34,11 +34,8 @@ describe(test.label, function () {
       this.render(hbs`{{frost-notifier}}`)
     })
 
-    it('the top-level container', function (done) {
+    it('the top-level container', function () {
       expect(this.$()).to.have.length(1)
-      return capture('frost-notifier', done, {
-        experimentalSvgs: true
-      })
     })
 
     it('multiple notifications', function () {
