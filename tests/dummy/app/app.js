@@ -2,8 +2,8 @@ import Ember from 'ember'
 const {Application} = Ember
 
 import loadInitializers from 'ember-load-initializers'
-import Resolver from 'ember-resolver'
 import config from './config/environment'
+import Resolver from './resolver'
 
 var App
 
