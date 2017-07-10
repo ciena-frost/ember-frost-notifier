@@ -1,3 +1,7 @@
+# 4.3.5 (2017-07-10)
+* **Update** to `ember-cli@2.12.3`
+
+
 # 4.3.4 (2017-06-26)
 * **Upgraded** to `pr-bumper@2.x`
 * **Upgraded** to recent `ember-cli-code-coverage`
