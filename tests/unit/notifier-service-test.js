@@ -1,11 +1,10 @@
 import {expect} from 'chai'
 import Ember from 'ember'
 const {run} = Ember
+import NotifierService from 'ember-frost-notifier/pods/services/notifier'
 import wait from 'ember-test-helpers/wait'
 import {afterEach, beforeEach, describe, it} from 'mocha'
 import sinon from 'sinon'
-
-import NotifierService from 'ember-frost-notifier/pods/services/notifier'
 
 describe('Unit / Service / notifier', function () {
   let service, sandbox, notification
