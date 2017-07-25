@@ -1,3 +1,7 @@
+# 4.3.6 (2017-07-25)
+* **Added** code coverage check script to build
+* **Updated** gh-pages publish of demo app script (demo app was not being published)
+
 # 4.3.5 (2017-07-10)
 * **Update** to `ember-cli@2.12.3`
 
