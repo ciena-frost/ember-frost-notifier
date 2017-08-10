@@ -1,3 +1,6 @@
+# 4.3.7 (2017-08-10)
+* **Updated** ember-cli 2.12.3 inter-dependencies
+
 # 4.3.6 (2017-07-25)
 * **Added** code coverage check script to build
 * **Updated** gh-pages publish of demo app script (demo app was not being published)
