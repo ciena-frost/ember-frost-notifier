@@ -5,7 +5,7 @@ import loadInitializers from 'ember-load-initializers'
 import config from './config/environment'
 import Resolver from './resolver'
 
-var App
+let App
 
 Ember.MODEL_FACTORY_INJECTIONS = true
 

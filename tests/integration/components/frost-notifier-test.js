@@ -34,11 +34,11 @@ describe(test.label, function () {
       this.render(hbs`{{frost-notifier}}`)
     })
 
-    it('the top-level container', function () {
+    it('should have the top-level container', function () {
       expect(this.$()).to.have.length(1)
     })
 
-    it('multiple notifications', function () {
+    it('should have multiple notifications', function () {
       expect(this.$('.frost-notifications')).to.have.length(2)
     })
   })
