@@ -1,6 +1,6 @@
+import EmberObject from '@ember/object'
+import {run} from '@ember/runloop'
 import {expect} from 'chai'
-import Ember from 'ember'
-const {run} = Ember
 import NotifierService from 'ember-frost-notifier/pods/services/notifier'
 import wait from 'ember-test-helpers/wait'
 import {afterEach, beforeEach, describe, it} from 'mocha'
@@ -62,7 +62,7 @@ describe('Unit / Service / notifier', function () {
   describe('removeNotification', function () {
     it('should remove from the notifications array', function (done) {
       run(function () {
-        let emberObject = Ember.Object.create(notification)
+        let emberObject = EmberObject.create(notification)
         service.notifications.pushObject(emberObject)
         service.removeNotification(emberObject)
 
@@ -76,7 +76,7 @@ describe('Unit / Service / notifier', function () {
 
   describe('clearAll', function () {
     beforeEach(function () {
-      let emberObject = Ember.Object.create(notification)
+      let emberObject = EmberObject.create(notification)
       service.notifications.pushObject(emberObject)
 
       service.clearAll()
@@ -100,7 +100,7 @@ describe('Unit / Service / notifier', function () {
   describe('setupAutoClear', function () {
     it('should remove the notification after clearDuration', function (done) {
       run(function () {
-        let emberObject = Ember.Object.create(notification)
+        let emberObject = EmberObject.create(notification)
         service.notifications.pushObject(emberObject)
         service.setupAutoClear(emberObject)
 

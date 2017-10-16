@@ -1,6 +1,5 @@
+import Service from '@ember/service'
 import {expect} from 'chai'
-import Ember from 'ember'
-const {Service} = Ember
 import {$hook, initialize as initializeHook} from 'ember-hook'
 import {integration} from 'ember-test-utils/test-support/setup-component-test'
 import hbs from 'htmlbars-inline-precompile'

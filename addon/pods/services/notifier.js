@@ -1,5 +1,7 @@
-import Ember from 'ember'
-const {A, Service, run} = Ember
+import {A} from '@ember/array'
+import EmberObject from '@ember/object'
+import {run} from '@ember/runloop'
+import Service from '@ember/service'
 
 /**
  * @typedef {Object} NotificationOption
@@ -44,7 +46,7 @@ export default Service.extend({
       throw new Error('No notification message set')
     }
 
-    const notification = Ember.Object.create({
+    const notification = EmberObject.create({
       message: options.message,
       details: options.details,
       onDetailsClick: options.onDetailsClick,
