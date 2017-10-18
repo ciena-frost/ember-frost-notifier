@@ -44,7 +44,7 @@
     "ember-disable-prototype-extensions": "^1.1.2",
     "ember-elsewhere": "1.0.2",
     "ember-export-application-global": "^2.0.0",
-    "ember-frost-core": "git://github.com/juwara0/ember-frost-core#upgradeEmberCli_2-16-2",
+    "ember-frost-core": "^2.0.0",
     "ember-frost-test": "^2.1.2",
     "ember-hook": "^1.4.2",
     "ember-load-initializers": "^1.0.0",
