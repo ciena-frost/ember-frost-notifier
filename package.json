@@ -17,7 +17,7 @@
   },
   "repository": "https://github.com/ciena-frost/ember-frost-notifier.git",
   "engines": {
-    "node": ">= 6.0.0"
+    "node": ">= 8.1.2"
   },
   "author": "Sophy Pal (https://github.com/sophypal)",
   "contributors": [
@@ -57,7 +57,7 @@
     "ember-truth-helpers": "^2.0.0",
     "eslint-plugin-ember": "^4.5.0",
     "loader.js": "^4.2.3",
-    "pr-bumper": "^2.0.1",
+    "pr-bumper": "^3.1.0",
     "sinon-chai": "^2.14.0"
   },
   "keywords": [
