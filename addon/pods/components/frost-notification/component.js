@@ -1,13 +1,13 @@
-import Ember from 'ember'
-const {Component, inject} = Ember
-import computed, {readOnly} from 'ember-computed-decorators'
+import Component from '@ember/component'
+import {inject as service} from '@ember/service'
+import {computed, readOnly} from 'ember-decorators/object'
 
 import layout from './template'
 
 export default Component.extend({
   // == Services ==============================================================
 
-  notifier: inject.service('notifier'),
+  notifier: service('notifier'),
 
   // == Component properties ==================================================
 
