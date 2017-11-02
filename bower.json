@@ -1,0 +1,7 @@
+{
+  "name": "ember-frost-notifier",
+  "dependencies": {
+    "Faker": "^3.0.1",
+    "pretender": "^0.10.1"
+  }
+}

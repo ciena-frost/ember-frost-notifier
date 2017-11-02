@@ -1,6 +1,6 @@
-import EmberObject from '@ember/object'
-import {run} from '@ember/runloop'
 import {expect} from 'chai'
+import Ember from 'ember'
+const {run} = Ember
 import NotifierService from 'ember-frost-notifier/pods/services/notifier'
 import wait from 'ember-test-helpers/wait'
 import {afterEach, beforeEach, describe, it} from 'mocha'
@@ -30,20 +30,20 @@ describe('Unit / Service / notifier', function () {
       service.addNotification(notification)
     })
 
-    it('should add to the notifications array', function () {
+    it('adds to the notifications array', function () {
       expect(service.notifications).to.have.length(1)
     })
 
-    it('should call setupAutoClear', function () {
+    it('calls setupAutoClear', function () {
       expect(service.setupAutoClear.called).to.equal(true)
     })
 
-    it('should use the specified clear duration', function () {
+    it('uses the specified clear duration', function () {
       expect(service.notifications[0].clearDuration).to.equal(100)
     })
 
     describe('when setupAutoClear is false', function () {
-      it('should not call setupAutoClear', function () {
+      it('does not call setupAutoClear', function () {
         notification.autoClear = false
         service.addNotification(notification)
         expect(service.setupAutoClear.calledOnce).to.equal(true)
@@ -51,7 +51,7 @@ describe('Unit / Service / notifier', function () {
     })
 
     describe('when clearDuration is not provided', function () {
-      it('should use the default clear duration', function () {
+      it('uses the default clear duration', function () {
         notification.clearDuration = undefined
         service.addNotification(notification)
         expect(service.notifications[1].clearDuration).to.equal(service.defaultClearDuration)
@@ -60,9 +60,9 @@ describe('Unit / Service / notifier', function () {
   })
 
   describe('removeNotification', function () {
-    it('should remove from the notifications array', function (done) {
+    it('removes from the notifications array', function (done) {
       run(function () {
-        let emberObject = EmberObject.create(notification)
+        let emberObject = Ember.Object.create(notification)
         service.notifications.pushObject(emberObject)
         service.removeNotification(emberObject)
 
@@ -76,13 +76,13 @@ describe('Unit / Service / notifier', function () {
 
   describe('clearAll', function () {
     beforeEach(function () {
-      let emberObject = EmberObject.create(notification)
+      let emberObject = Ember.Object.create(notification)
       service.notifications.pushObject(emberObject)
 
       service.clearAll()
     })
 
-    it('should remove all notifications', function () {
+    it('removes all notifications', function () {
       expect(service.notifications).to.have.length(0)
     })
   })
@@ -92,15 +92,15 @@ describe('Unit / Service / notifier', function () {
       service.setDefaultClearDuration(1)
     })
 
-    it('should set the defaultClearDuration', function () {
+    it('sets the defaultClearDuration', function () {
       expect(service.defaultClearDuration).to.equal(1)
     })
   })
 
   describe('setupAutoClear', function () {
-    it('should remove the notification after clearDuration', function (done) {
+    it('removes the notification after clearDuration', function (done) {
       run(function () {
-        let emberObject = EmberObject.create(notification)
+        let emberObject = Ember.Object.create(notification)
         service.notifications.pushObject(emberObject)
         service.setupAutoClear(emberObject)
 
