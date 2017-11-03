@@ -48,18 +48,14 @@ describe(test.label, function () {
 
   describe('renders', function () {
     beforeEach(function () {
-      return this.render(hbs`{{frost-notification notification=notification}}`)
+      this.render(hbs`{{frost-notification notification=notification}}`)
     })
 
-    it('the top-level container', function (done) {
+    it('the top-level container', function () {
       expect($hook(notifierHookName)).to.have.length(1)
       expect($hook(notifierContentHookName)).to.have.length(1)
       expect($hook(notifierContentMessageHookName)).to.have.length(1)
       expect($hook(notifierContentDetailsHookName)).to.have.length(1)
-
-      return capture('frost-notification', done, {
-        experimentalSvgs: true
-      })
     })
 
     it('the message', function () {
