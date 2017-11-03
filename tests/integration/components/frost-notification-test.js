@@ -48,7 +48,7 @@ describe(test.label, function () {
 
   describe('renders', function () {
     beforeEach(function () {
-      this.render(hbs`{{frost-notification notification=notification}}`)
+      return this.render(hbs`{{frost-notification notification=notification}}`)
     })
 
     it('the top-level container', function (done) {
