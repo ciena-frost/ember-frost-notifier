@@ -1,5 +1,6 @@
-import Service from '@ember/service'
 import {expect} from 'chai'
+import Ember from 'ember'
+const {Service} = Ember
 import {$hook, initialize as initializeHook} from 'ember-hook'
 import {integration} from 'ember-test-utils/test-support/setup-component-test'
 import hbs from 'htmlbars-inline-precompile'
@@ -50,30 +51,30 @@ describe(test.label, function () {
       this.render(hbs`{{frost-notification notification=notification}}`)
     })
 
-    it('should have the top-level container', function () {
+    it('the top-level container', function () {
       expect($hook(notifierHookName)).to.have.length(1)
       expect($hook(notifierContentHookName)).to.have.length(1)
       expect($hook(notifierContentMessageHookName)).to.have.length(1)
       expect($hook(notifierContentDetailsHookName)).to.have.length(1)
     })
 
-    it('should have the message', function () {
+    it('the message', function () {
       expect($hook(notifierContentMessageHookName).text()).to.match(/test message/)
     })
 
-    it('should have the details link', function () {
+    it('the details link', function () {
       expect($hook(notifierContentDetailsHookName)).to.have.length(1)
     })
   })
 
-  it('should not display details link when details aren\'t provided', function () {
+  it('does not display details link when details aren\'t provided', function () {
     this.set('notification.details', undefined)
 
     this.render(hbs`{{frost-notification notification=notification}}`)
     expect($hook(notifierContentDetailsHookName)).not.to.have.length(1)
   })
 
-  it('should call onDetailsClick when the details link is clicked', function () {
+  it('calls onDetailsClick when the details link is clicked', function () {
     let spy = sandbox.spy()
 
     this.set('notification.onDetailsClick', spy)
@@ -83,14 +84,14 @@ describe(test.label, function () {
     expect(spy.calledWith('details')).to.equal(true)
   })
 
-  it('should remove the notification when closed', function () {
+  it('removes the notification when closed', function () {
     this.render(hbs`{{frost-notification notification=notification}}`)
     $hook(notifierCloseIconHookName).click()
 
     expect(this.get('notifier').removeNotification.called).to.equal(true)
   })
 
-  it('should change hook', function () {
+  it('change hook', function () {
     this.render(hbs`{{frost-notification notification=notification hook='my-hook'}}`)
     expect($hook(`my-hook${notifierHookName}`)).to.have.length(1)
   })

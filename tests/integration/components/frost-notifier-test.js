@@ -1,6 +1,6 @@
-import {A} from '@ember/array'
-import Service from '@ember/service'
 import {expect} from 'chai'
+import Ember from 'ember'
+const {A, Service} = Ember
 import {integration} from 'ember-test-utils/test-support/setup-component-test'
 import hbs from 'htmlbars-inline-precompile'
 import {beforeEach, describe, it} from 'mocha'
@@ -34,11 +34,11 @@ describe(test.label, function () {
       this.render(hbs`{{frost-notifier}}`)
     })
 
-    it('should have the top-level container', function () {
+    it('the top-level container', function () {
       expect(this.$()).to.have.length(1)
     })
 
-    it('should have multiple notifications', function () {
+    it('multiple notifications', function () {
       expect(this.$('.frost-notifications')).to.have.length(2)
     })
   })

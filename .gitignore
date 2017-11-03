@@ -11,16 +11,15 @@
 # misc
 /.sass-cache
 /connect.lock
-/coverage/*
+/coverage/coverage.json
+/coverage/lcov.info
+/coverage.json
 /libpeerconnection.log
 npm-debug.log*
-yarn-error.log
 testem.log
 .idea
+/visual-acceptance
 /typings
+/coverage
 .DS_Store
-
-# ember-try
-.node_modules.ember-try/
-bower.json.ember-try
-package.json.ember-try
+**.ember-try

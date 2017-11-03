@@ -89,11 +89,10 @@ In your application/template.hbs:
 In your controller:
 
 ```javascript
-import Controller from '@ember/controller'
-import {inject as service} from '@ember/service'
+import Ember from 'ember'
 
-export default Controller.extend({
-	notifier: service('notifier'),
+export default Ember.Controller.extend({
+	notifier: Ember.inject.service('notifier'),
 	actions: {
 		showNotification () {
 			this.get('notifier').addNotification({
@@ -111,7 +110,7 @@ export default Controller.extend({
 ```
 
 ## Testing with ember-hook
-This addon has been optimized for use with [ember-hook](https://github.com/Ticketfly/ember-hook). You can set a `hook` name on your notifier template.
+This addon has been optimized for use with [ember-hook](https://github.com/Ticketfly/ember-hook). You can set a `hook` name on your notifier template. 
 This will allow you to access the internal notifier content for testing.
 ### Available hooks
 * Top level - `<hook-name>-notification-wrapper`

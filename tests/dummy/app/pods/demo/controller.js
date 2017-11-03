@@ -1,10 +1,8 @@
-import Controller from '@ember/controller'
-import {inject as service} from '@ember/service'
 import Ember from 'ember'
-const {Logger} = Ember
+const {Controller, Logger, inject} = Ember
 
 export default Controller.extend({
-  notifier: service('notifier'),
+  notifier: inject.service('notifier'),
   message: 'Notification message',
   type: 'success',
   clearDuration: '5000',
