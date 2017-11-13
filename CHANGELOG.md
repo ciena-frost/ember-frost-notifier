@@ -1,3 +1,6 @@
+# 6.0.1 (2017-11-13)
+* #62 - Bind context to call of this._super.included() in index.js
+
 # 6.0.0 (2017-11-03)
 
 ## WARNING: THIS REVERTS EMBER CLI 2.16.2 BACK TO 2.12.3
