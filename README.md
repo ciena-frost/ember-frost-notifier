@@ -109,6 +109,15 @@ export default Ember.Controller.extend({
 })
 ```
 
+You can also close over the context of a component to send actions, such as:
+
+```
+onDetailsClick: (details) => {
+  this.send('someAction', details)
+}
+```
+
+
 ## Testing with ember-hook
 This addon has been optimized for use with [ember-hook](https://github.com/Ticketfly/ember-hook). You can set a `hook` name on your notifier template. 
 This will allow you to access the internal notifier content for testing.
