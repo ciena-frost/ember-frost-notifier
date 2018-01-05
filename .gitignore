@@ -19,7 +19,6 @@ npm-debug.log*
 package-lock.json
 testem.log
 .idea
-/visual-acceptance
 /typings
 /coverage
 .DS_Store
