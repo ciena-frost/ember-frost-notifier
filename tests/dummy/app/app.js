@@ -5,11 +5,9 @@ import loadInitializers from 'ember-load-initializers'
 import config from './config/environment'
 import Resolver from './resolver'
 
-var App
-
 Ember.MODEL_FACTORY_INJECTIONS = true
 
-App = Application.extend({
+const App = Application.extend({
   modulePrefix: config.modulePrefix,
   podModulePrefix: config.podModulePrefix,
   Resolver
