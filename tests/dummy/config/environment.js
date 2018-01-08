@@ -1,6 +1,6 @@
 /* eslint-env node */
 module.exports = function (environment) {
-  var ENV = {
+  let ENV = {
     modulePrefix: 'dummy',
     podModulePrefix: 'dummy/pods',
     environment: environment,
@@ -20,12 +20,6 @@ module.exports = function (environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-    },
-
-    'ember-prop-types': {
-      spreadProperty: 'options',
-      throwErrors: true,
-      validateOnUpdate: true
     }
   }
 

@@ -24,6 +24,17 @@ export default Component.extend({
   @readOnly
   @computed('notification.type')
   /**
+   * Whether notification is of type 'success'
+   * @param {String} type - notification type
+   * @returns {Boolean} whether notification is of type 'success'
+   */
+  isSuccessNotification: function (type) {
+    return type === 'success'
+  },
+
+  @readOnly
+  @computed('notification.type')
+  /**
    * Computed icon path based on type
    * @param {String} type - notification type
    * @returns {String} the icon path
