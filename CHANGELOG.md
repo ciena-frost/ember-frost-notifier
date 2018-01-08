@@ -1,3 +1,23 @@
+# 7.0.0 (2018-01-08)
+* Remove `Faker` Bower dependency
+* Remove `pretender` Bower dependency
+* Remove `ember-spread` NPM devDependency
+* Remove `ember-prop-types` NPM devDependency
+* Remove `ember-elsewhere` NPM devDependency
+* Remove `ember-concurrency` NPM devDependency
+* Remove _package-lock.json_ until officially support Node 8
+* Remove useLintTree from ember-cli-mocha configuration
+* Remove `/visual-acceptance` from .gitignore
+* Move `ember-hook` NPM devDependency to dependency and pin to `1.4.2`
+* Move `ember-truth-helpers` NPM devDependeny to dependencies
+* Move `ember-computed-decorators` NPM devDependency to dependencies
+* Pin `ember-cli-code-coverage` at `0.3.12`
+* Upgrade and pin `ember-cli-sass` NPM dependency to `7.1.1`
+* Upgrade `ember-cli-frost-blueprints` NPM devDependency to `^5.0.0`
+* Upgrade and move `ember-frost-core` from devDependency to dependency @ `^5.0.0`
+* Install `bower` NPM devDependency @ `^1.8.2`
+* Install `ember-frost-test` @ `^4.0.0`
+
 # 6.0.1 (2017-11-13)
 * #62 - Bind context to call of this._super.included() in index.js
 
