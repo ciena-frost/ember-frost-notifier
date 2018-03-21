@@ -1,3 +1,18 @@
+# 8.0.0 (2018-03-20)
+* Updated pull request template
+* Added issue template
+* Updated to pr-bumper version 3
+* Updated to node 8
+* Added slack integration
+* Updated ember-frost-test to ^4.0.1
+* Updated ember-test-utils to ^8.1.1
+* Updated ember-cli-frost-blueprints to ^5.0.2
+* Updated pr-bumper to ^3.7.0.
+* Updated ember-frost-core to ^7.0.0
+* Removed ignoring of package-lock.json file
+* Added package-lock.json file
+* Updated Travis CI scripts to allow non-exact node version
+
 # 7.0.0 (2018-01-08)
 * Remove `Faker` Bower dependency
 * Remove `pretender` Bower dependency
@@ -76,7 +91,7 @@ The 2.16.2 changes are now located in the `ember-cli-2.16.2` branch and will hop
 
 
 # 4.3.0 (2017-04-06)
-* **Remove** `blueprints` and use `dependencies` in `package.json` instead to make sure `ember-frost-core` is installed too. 
+* **Remove** `blueprints` and use `dependencies` in `package.json` instead to make sure `ember-frost-core` is installed too.
 
 # 4.2.4 (2017-03-20)
 * **Used** info, warning and error icons from `ember-frost-core`
