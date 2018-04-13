@@ -1,3 +1,7 @@
+# 9.0.0 (2018-04-13)
+
+* Upgraded `ember-frost-core` to ^8.0.0
+
 # 8.0.0 (2018-03-20)
 * Updated pull request template
 * Added issue template

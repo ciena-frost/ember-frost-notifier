@@ -1,6 +1,6 @@
 {
   "name": "ember-frost-notifier",
-  "version": "8.0.0",
+  "version": "9.0.0",
   "description": "An ember service and component for managing application notifications",
   "frostGuideDirectory": "ui-components/indicator-controls/notifications",
   "directories": {
